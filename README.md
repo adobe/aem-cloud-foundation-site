@@ -1,5 +1,5 @@
 # AEM Cloud Foundation Team Site
-Your project's description...
+AEM Cloud Foundation Helix based team site repository.
 
 ## Environments
 - Preview: https://main--aem-cloud-foundation-site--adobe.hlx.page/
