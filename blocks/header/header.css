@@ -43,6 +43,12 @@ header nav .nav-brand img {
   height: auto;
 }
 
+/* logo */
+
+header .nav-logo img {
+  width: 25px;
+}
+
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
