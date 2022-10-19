@@ -9,8 +9,18 @@ main .section.columns-container {
 
 .columns img {
     width: 100%;
+    opacity: 0;
+    transform: translate(50px, 0);
+    transition: transform 0.5s ease-out, opacity 1s;
+}
+
+.columns .columns-left img {
+    transform: translate(-50px, 0);
+}
+
+.columns img.enter {
     opacity: 1;
-    transition: 0.5s ease-in;
+    transform: translate(0, 0);
 }
 
 @media (max-width: 900px) {
@@ -24,7 +34,7 @@ main .section.columns-container {
         display: flex;
         align-items: center;
         flex-direction: unset;
-        margin: 20px 0px;
+        padding: 20px 0px;
     }
 
     .columns > div > div {
