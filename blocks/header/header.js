@@ -75,8 +75,5 @@ export default async function decorate(block) {
   }
 
   // decorate brand logo
-  const logo = decorateLogo();
-  if (logo) {
-    nav.append(logo);
-  }
+  decorateLogo();
 }
