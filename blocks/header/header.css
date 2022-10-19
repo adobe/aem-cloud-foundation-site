@@ -216,7 +216,7 @@ header nav[aria-expanded='true'] .nav-tools li {
   header nav .nav-sections > ul > li {
     padding: 0 16px;
     position: relative;
-    font-size: 16px;
+    font-size: 22px;
     margin: 0;
     cursor: pointer;
     padding-top: 0;
