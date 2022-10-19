@@ -229,5 +229,4 @@ main .section[data-section-status='initialized'] {
 
 main .section.highlight {
   background: var(--highlight-background-gradient);
-  color: white;
 }
