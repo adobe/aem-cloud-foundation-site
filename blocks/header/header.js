@@ -20,7 +20,7 @@ function decorateLogo() {
   logo.textContent = '';
   logo.insertAdjacentHTML('afterbegin', BRAND_IMG);
   return logo;
-};
+}
 
 /**
  * decorates the header, mainly the nav
