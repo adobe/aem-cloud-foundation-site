@@ -26,10 +26,17 @@ header nav[aria-expanded='true'] {
   min-height: 100vh;
 }
 
+/* logo */
+
+header .nav-logo img {
+  width: 25px;
+}
+
 /* brand */
 header .nav-brand {
   grid-area: brand;
   font-size: 22px;
+  color: #fa0f00;
   font-weight: 700;
   line-height: 1em;
 }
@@ -191,7 +198,7 @@ header nav[aria-expanded='true'] .nav-tools li {
   }
 
   header nav .nav-brand {
-    flex: 0 0 150px;
+    flex: 0 0 200px;
   }
 
   header nav .nav-sections ul {
@@ -210,7 +217,7 @@ header nav[aria-expanded='true'] .nav-tools li {
   header nav .nav-sections > ul > li {
     padding: 0 16px;
     position: relative;
-    font-size: 16px;
+    font-size: 22px;
     margin: 0;
     cursor: pointer;
     padding-top: 0;

@@ -1,5 +1,7 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
 
+const BRAND_IMG = '<img loading="lazy" alt="Adobe" src="/blocks/header/adobe-logo.svg">';
+
 /**
  * collapses all open nav sections
  * @param {Element} sections The container element
@@ -11,11 +13,19 @@ function collapseAllNavSections(sections) {
   });
 }
 
+function decorateLogo() {
+  const logo = document.body.querySelector('.adobe-logo a');
+  logo.classList.add('nav-logo');
+  logo.setAttribute('aria-label', logo.textContent);
+  logo.textContent = '';
+  logo.insertAdjacentHTML('afterbegin', BRAND_IMG);
+  return logo;
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
-
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   block.textContent = '';
@@ -63,4 +73,7 @@ export default async function decorate(block) {
     decorateIcons(nav);
     block.append(nav);
   }
+
+  // decorate brand logo
+  decorateLogo();
 }

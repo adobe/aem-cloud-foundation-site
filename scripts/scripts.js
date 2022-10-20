@@ -594,7 +594,7 @@ initHlx();
  */
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
-const RUM_GENERATION = 'project-1'; // add your RUM generation information here
+const RUM_GENERATION = 'aem-cloud-foundation-site-1'; // add your RUM generation information here
 const ICON_ROOT = '/icons';
 
 sampleRUM('top');
@@ -686,6 +686,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   loadHeader(doc.querySelector('header'));
+  loadCSS('/fonts/fonts.css');
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
