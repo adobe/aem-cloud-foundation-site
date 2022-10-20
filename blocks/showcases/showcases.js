@@ -7,14 +7,15 @@ export default async function decorate(block) {
   const showcasesPath = cfg.showcases || '/showcases';
   const resp = await fetch(`${showcasesPath}.plain.html`);
   const html = await resp.text();
-  const showcases = document.createElement('div');
+  let showcases = document.createElement('div');
   showcases.innerHTML = html;
   await decorateIcons(showcases);
   block.append(showcases);
 
   /* change to ul, li */
   const ul = document.createElement('ul');
-  [...block.querySelector('.showcases').children].forEach((row) => {
+  showcases = showcases.querySelector('.showcases');
+  [...showcases.children].forEach((row) => {
     const li = document.createElement('li');
     li.innerHTML = row.innerHTML;
     [...li.children].forEach((div) => {
@@ -24,6 +25,6 @@ export default async function decorate(block) {
     ul.append(li);
   });
   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
-  block.textContent = '';
-  block.append(ul);
+  showcases.textContent = '';
+  showcases.append(ul);
 }
