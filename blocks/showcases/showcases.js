@@ -14,7 +14,7 @@ export default async function decorate(block) {
 
   /* change to ul, li */
   const ul = document.createElement('ul');
-  [...block.querySelector('.showcase').children].forEach((row) => {
+  [...block.querySelector('.showcases').children].forEach((row) => {
     const li = document.createElement('li');
     li.innerHTML = row.innerHTML;
     [...li.children].forEach((div) => {
