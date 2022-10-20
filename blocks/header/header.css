@@ -26,6 +26,12 @@ header nav[aria-expanded='true'] {
   min-height: 100vh;
 }
 
+/* logo */
+
+header .nav-logo img {
+  width: 25px;
+}
+
 /* brand */
 header .nav-brand {
   grid-area: brand;
@@ -42,12 +48,6 @@ header nav .nav-brand p {
 header nav .nav-brand img {
   width: 128px;
   height: auto;
-}
-
-/* logo */
-
-header .nav-logo img {
-  width: 25px;
 }
 
 /* hamburger */

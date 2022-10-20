@@ -16,7 +16,6 @@
   --link-hover-color: #136ff6;
   --background-color: #fff;
   --overlay-background-color: #eee;
-  /* --highlight-background-gradient: linear-gradient(75deg, #DB3278, #EE732F); */
   --highlight-background-gradient: linear-gradient(75deg, #222, #444);
   --text-color: #444;
 
@@ -44,7 +43,6 @@
 }
 
 body {
-  font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -203,7 +201,7 @@ main img {
 }
 
 main .section {
-  padding: 32px 32px;  
+  padding: 32px;
 }
 
 @media (min-width: 900px) {
