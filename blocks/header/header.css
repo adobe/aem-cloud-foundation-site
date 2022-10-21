@@ -33,9 +33,9 @@ header .nav-logo img {
 }
 
 /* brand */
-header .nav-brand {
+header .nav-brand p {
   grid-area: brand;
-  font-size: 22px;
+  font-size: var(--body-font-size-s);
   color: #fa0f00;
   font-weight: 700;
   line-height: 1em;
