@@ -3,6 +3,16 @@
     flex-direction: column;
 }
 
+@media (max-width: 900px) {
+    .columns > div:nth-of-type(2) > .columns-left {
+        order: 2;
+    }
+    
+    .columns > div:nth-of-type(2) > .columns-right {
+        order: 1;
+    }
+}
+
 main .section.columns-container {
     padding: 32px 0;
 }
