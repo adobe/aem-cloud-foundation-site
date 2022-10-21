@@ -57,6 +57,14 @@ export default async function decorate(block) {
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         });
       });
+
+      navSections.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          const expanded = nav.getAttribute('aria-expanded') === 'true';
+          document.body.style.overflowY = expanded ? '' : 'hidden';
+          nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+      });
     }
 
     // hamburger for mobile
