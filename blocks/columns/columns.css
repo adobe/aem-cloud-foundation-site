@@ -1,7 +1,6 @@
 .columns > div {
     display: flex;
     flex-direction: column;
-    flex-flow: column;
 }
 
 @media (max-width: 900px) {
