@@ -1,5 +1,4 @@
 [![CodeQL](https://github.com/adobe/aem-cloud-foundation-site/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/adobe/aem-cloud-foundation-site/actions/workflows/codeql.yml)
-
 [![Validation](https://github.com/adobe/aem-cloud-foundation-site/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/adobe/aem-cloud-foundation-site/actions/workflows/run-tests.yaml)
 
 # AEM Cloud Foundation Team Site
