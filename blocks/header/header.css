@@ -40,27 +40,17 @@ header nav[aria-expanded="true"] {
   header nav {
     display: flex;
     justify-content: space-between;
-}
-
-/* logo */
-
-header .nav-logo img {
-  width: 25px;
-}
-
-/* brand */
-header .nav-brand p {
-  grid-area: brand;
-  font-size: 18px;
-  color: #fa0f00;
-  font-weight: 700;
-  line-height: 1em;
-}
+  }
 
   header nav[aria-expanded="true"] {
     min-height: 0;
     overflow: visible;
   }
+}
+
+/* logo */
+header .nav-logo img {
+  width: 25px;
 }
 
 header nav p {
@@ -160,6 +150,18 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+}
+
+header .nav-brand p {
+  grid-area: brand;
+  font-size: 18px;
+  color: #fa0f00;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+header nav .nav-brand p {
+  margin: 0;
 }
 
 header nav .nav-brand img {
