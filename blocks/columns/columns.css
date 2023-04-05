@@ -71,4 +71,5 @@ main .section.columns-container {
 
   .columns > div:nth-of-type(2) > div:last-of-type {
       padding-right: 128px;
+  }
 }
