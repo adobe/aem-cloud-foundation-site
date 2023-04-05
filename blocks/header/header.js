@@ -1,4 +1,4 @@
-import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
+import { getMetaData, decorateIcons } from '../../scripts/lib-franklin.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -35,8 +35,6 @@ function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 }
 
-const BRAND_IMG = '<img loading="lazy" alt="Adobe" src="/blocks/header/adobe-logo.svg">';
-
 /**
  * Toggles all nav sections
  * @param {Element} sections The container element
@@ -48,6 +46,8 @@ function toggleAllNavSections(sections, expanded = false) {
   });
 }
 
+const BRAND_IMG = '<img loading="lazy" alt="Adobe" src="/blocks/header/adobe-logo.svg">';
+
 function decorateLogo() {
   const logo = document.body.querySelector('.adobe-logo a');
   logo.classList.add('nav-logo');
@@ -55,15 +55,6 @@ function decorateLogo() {
   logo.textContent = '';
   logo.insertAdjacentHTML('afterbegin', BRAND_IMG);
   return logo;
-}
-
-function navExpanded(nav) {
-  return nav.getAttribute('aria-expanded') === 'true';
-}
-
-function toggleNav(nav, expanded) {
-  document.body.style.overflowY = expanded ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
 }
 
 /**
@@ -122,6 +113,7 @@ export default async function decorate(block) {
     const nav = document.createElement('nav');
     nav.id = 'nav';
     nav.innerHTML = html;
+    decorateIcons(nav);
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
@@ -141,24 +133,15 @@ export default async function decorate(block) {
           }
         });
       });
-
-      navSections.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          const expanded = navExpanded(nav);
-          if (expanded) {
-            toggleNav(nav, expanded);
-          }
-        });
-      });
     }
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
-    hamburger.innerHTML = '<div class="nav-hamburger-icon"></div>';
-    hamburger.addEventListener('click', () => {
-      toggleNav(nav, navExpanded(nav));
-    });
+    hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
+        <span class="nav-hamburger-icon"></span>
+      </button>`;
+    hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
     nav.prepend(hamburger);
     nav.setAttribute('aria-expanded', 'false');
     // prevent mobile nav behavior on window resize
