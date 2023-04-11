@@ -1,4 +1,4 @@
-import { createOptimizedPicture, readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
+import { createOptimizedPicture, readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
