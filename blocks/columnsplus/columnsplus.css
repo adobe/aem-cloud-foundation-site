@@ -1,10 +1,5 @@
-/*.columnsplus > div {
-  display: flex;
-  flex-direction: column;
-}*/
-
 @media (max-width: 900px) {
-   .columnsplus > div > div > div {
+    .columnsplus .columnsplus-row {
       display: flex;
       flex-direction: column;
     }
@@ -53,9 +48,29 @@ main .section.columnsplus-container {
   margin-right: 32px;
 }
 
-.columnsplus > div:nth-of-type(2n) {
-  color: var(--background-color);
+.columnsplus .columnsplus-bg-img-row img {
+  transform: none;
+  transition: opacity 1s;
 }
+
+.columnsplus .columnsplus-bg-img-row canvas {
+  display: none;
+}
+
+/*.columnsplus > div:nth-of-type(2n) {
+  color: var(--background-color);
+}*/
+
+.columnsplus > div.bg-wrapper-bright {
+  color: var(--text-color);
+  transition: color 1s;
+}
+
+.columnsplus > div.bg-wrapper-dark {
+  color: var(--background-color);
+  transition: color 1s;
+}
+
 
 .columnsplus .columnsplus-single img {
   width: 100%;
@@ -83,14 +98,14 @@ main .section.columnsplus-container {
 
 
 @media (min-width: 900px) {
-  .columnsplus-content-wrapper > div  {
+  .columnsplus-row  {
     display: flex;
     align-items: center;
     flex-direction: unset;
     padding: 20px 0;
   }
 
-  .columnsplus-content-wrapper > div > div {
+  .columnsplus-row > div {
     flex: 1;
     order: unset;
     margin-left: 32px;
