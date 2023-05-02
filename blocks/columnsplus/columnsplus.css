@@ -57,9 +57,11 @@ main .section.columnsplus-container {
   display: none;
 }
 
-/*.columnsplus > div:nth-of-type(2n) {
+/*
+.columnsplus > div:nth-of-type(2n) {
   color: var(--background-color);
-}*/
+}
+*/
 
 .columnsplus > div.bg-wrapper-bright {
   color: var(--text-color);
@@ -95,7 +97,6 @@ main .section.columnsplus-container {
   padding-top: 10px;
   padding-bottom: 20px;
 }
-
 
 @media (min-width: 900px) {
   .columnsplus-row  {
