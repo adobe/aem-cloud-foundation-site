@@ -1,0 +1,123 @@
+@media (max-width: 900px) {
+  .columnsplus .columnsplus-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .columnsplus .columnsplus-img-col {
+    order: 2;
+  }
+
+  .columnsplus .columnsplus-left:not(.columnsplus-img-col) {
+    order: 1;
+  }
+
+  .columnsplus .columnsplus-right:not(.columnsplus-img-col) {
+    order: 1;
+  }
+
+  .columnsplus-content-wrapper>div {
+    padding: 0 32px;
+  }
+}
+
+main .section.columnsplus-container {
+  padding: 32px 0;
+}
+
+.columnsplus img {
+  width: 100%;
+  opacity: 0;
+  position: relative;
+  transform: translate(50px, 0);
+  transition: transform 0.5s ease-out, opacity 1s;
+}
+
+.columnsplus .columnsplus-left img {
+  transform: translate(-50px, 0);
+}
+
+.columnsplus img.enter {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.columnsplus .columnsplus-bg-wrapper {
+  position: relative;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.columnsplus .columnsplus-bg-img-row img {
+  transform: none;
+  transition: opacity 1s;
+}
+
+.columnsplus .columnsplus-bg-img-row canvas {
+  display: none;
+}
+
+/*
+.columnsplus > div:nth-of-type(2n) {
+  color: var(--background-color);
+}
+*/
+
+.columnsplus>div.bg-wrapper-bright {
+  color: var(--text-color);
+  transition: color 1s;
+}
+
+.columnsplus>div.bg-wrapper-dark {
+  color: var(--background-color);
+  transition: color 1s;
+}
+
+
+.columnsplus .columnsplus-single img {
+  width: 100%;
+  height: 100%;
+}
+
+.columnsplus .columnsplus-bg-wrapper>div:first-of-type {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.columnsplus .columnsplus-content-wrapper {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .columnsplus-row {
+    display: flex;
+    align-items: center;
+    flex-direction: unset;
+    padding: 20px 0;
+  }
+
+  .columnsplus-row>div {
+    flex: 1;
+    order: unset;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .columnsplus .columnsplus-left:not(.columnsplus-img-col) {
+    padding-left: 128px;
+  }
+
+  .columnsplus .columnsplus-right:not(.columnsplus-img-col) {
+    padding-right: 128px;
+  }
+}
