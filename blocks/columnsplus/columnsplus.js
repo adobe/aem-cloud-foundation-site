@@ -31,6 +31,23 @@ function setClassForBrightness(image, canvas, wrapper) {
   }
 }
 
+function decorateVideo(videoLink) {
+  const videoWrapper = videoLink.closest('div');
+  if (videoWrapper && videoWrapper.children.length === 1) {
+    const videoElement = document.createElement('video');
+    const sourceElement = document.createElement('source');
+    sourceElement.src = videoLink.href;
+    sourceElement.type = 'video/mp4';
+    videoElement.appendChild(sourceElement);
+    videoElement.autoplay = true;
+    videoElement.loop = true;
+    videoElement.playsInline = true;
+    videoElement.muted = true;
+    videoLink.replaceWith(videoElement);
+    videoWrapper.classList.add('columnsplus-img-col');
+  }
+}
+
 export default function decorate(block) {
   const cols = [...block.firstElementChild.nextElementSibling.children];
   block.classList.add(`columnsplus-${cols.length}-cols`);
@@ -61,6 +78,10 @@ export default function decorate(block) {
             picWrapper.classList.add('columnsplus-img-col');
           }
         }
+      }
+      const link = col.querySelector('a');
+      if (link && link.href.endsWith('.mp4')) {
+        decorateVideo(link);
       }
     });
   });
@@ -99,7 +120,7 @@ export default function decorate(block) {
     if (ch.length > 1 && lastbgwrapper != null) lastbgwrapper.appendChild(row);
   });
 
-  block.querySelectorAll('img').forEach((img) => {
-    observer.observe(img);
+  block.querySelectorAll('img, video').forEach((media) => {
+    observer.observe(media);
   });
 }
