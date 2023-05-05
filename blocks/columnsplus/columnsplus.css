@@ -117,14 +117,4 @@ main .section.columnsplus-container {
     margin-left: 32px;
     margin-right: 32px;
   }
-
- /*
-  .columnsplus .columnsplus-left:not(.columnsplus-img-col) {
-    padding-left: 128px;
-  }
-
-  .columnsplus .columnsplus-right:not(.columnsplus-img-col) {
-    padding-right: 128px;
-  }
-  */
 }
