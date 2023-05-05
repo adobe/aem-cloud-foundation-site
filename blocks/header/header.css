@@ -175,7 +175,7 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  background-color: var(--overlay-color);
+  background-color: var(--overlay-background-color);
 }
 
 header nav[aria-expanded="true"] .nav-sections {
@@ -203,6 +203,11 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
 }
 
+header nav .nav-sections ul > li > ul > li:hover {
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
 @media (min-width: 900px) {
   header nav .nav-sections {
     display: block;
@@ -216,7 +221,8 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .nav-drop {
     position: relative;
-    padding-right: 16px;
+    padding-right: 20px;
+    padding-left: 5px;
     cursor: pointer;
   }
 
@@ -225,11 +231,11 @@ header nav .nav-sections ul > li > ul > li {
     display: inline-block;
     position: absolute;
     top: .5em;
-    right: 2px;
+    right: 6px;
     transform: rotate(135deg);
     width: 6px;
     height: 6px;
-    border: 2px solid currentcolor;
+    border: solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
   }
@@ -284,6 +290,11 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections > ul > li:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
   }
 }
 

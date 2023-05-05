@@ -133,6 +133,14 @@ export default async function decorate(block) {
           }
         });
       });
+      // Close the menu when clicking outside
+      window.addEventListener('click', (e) => {
+        if (isDesktop.matches) {
+          if (!navSections.contains(e.target)) {
+            toggleAllNavSections(navSections);
+          }
+        }
+      });
     }
 
     // hamburger for mobile
