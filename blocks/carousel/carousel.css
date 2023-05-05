@@ -1,0 +1,78 @@
+/* block specific CSS goes here */
+.section.carousel-container {
+  padding: 32px 0;
+}
+
+.carousel {
+  position: relative;
+  min-height: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-items: center;
+}
+
+
+.carousel .carousel-hidden * {
+  display: none;
+  height: 0px;
+  width: 0px;
+}
+
+.carousel .carousel-panel-container:not(.carousel-hidden) picture {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.carousel .carousel-panel-container:not(.carousel-hidden) img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .carousel-panel-container:not(.carousel-hidden) {
+  height: 300px;
+  align-items: center;
+}
+
+.carousel div * {
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+.carousel :is(img, video) {
+  width: 100%;
+  opacity: 0;
+  position: relative;
+  transform: translate(50px, 0);
+  transition: transform 0.5s ease-out, opacity 1s;
+}
+
+.carousel :is(img, video).enter {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.carousel-panel {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: unset;
+  padding: 0px 0;
+}
+
+.carousel-panel>div {
+  flex: 1;
+  align-items: center;
+  align-content: center;
+  order: unset;
+  margin-left: 32px;
+  margin-right: 32px;
+}
