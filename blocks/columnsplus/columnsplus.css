@@ -28,9 +28,14 @@ main .section.columnsplus-container {
 .columnsplus :is(img, video) {
   width: 100%;
   opacity: 0;
+  scale: 100%;
   position: relative;
   transform: translate(50px, 0);
-  transition: transform 0.5s ease-out, opacity 1s;
+  transition: transform 0.5s, opacity 1s, scale 0.3s ;
+}
+
+.columnsplus :is(img, video):hover {
+  scale: 102%;
 }
 
 .columnsplus .columnsplus-left :is(img, video) {
@@ -113,6 +118,7 @@ main .section.columnsplus-container {
     margin-right: 32px;
   }
 
+ /*
   .columnsplus .columnsplus-left:not(.columnsplus-img-col) {
     padding-left: 128px;
   }
@@ -120,4 +126,5 @@ main .section.columnsplus-container {
   .columnsplus .columnsplus-right:not(.columnsplus-img-col) {
     padding-right: 128px;
   }
+  */
 }
