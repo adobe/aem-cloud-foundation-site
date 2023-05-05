@@ -18,6 +18,7 @@ export default async function decorate(block) {
   [...showcases.children].forEach((row) => {
     const li = document.createElement('li');
     li.innerHTML = row.innerHTML;
+    li.classList.add('showcases-card');
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'showcases-card-image';
       else div.className = 'showcases-card-body';
