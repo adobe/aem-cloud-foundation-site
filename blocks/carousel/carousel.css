@@ -5,10 +5,11 @@
 
 .carousel {
   position: relative;
-  min-height: 300px;
+  min-height: 360px;
   margin-top: 25px;
   margin-bottom: 25px;
   align-items: center;
+  overflow: hidden;
 }
 
 .carousel :is(img, video) {
@@ -56,7 +57,7 @@
 
 
 .carousel .carousel-panel-container:not(.carousel-hidden) picture {
-  height: 300px;
+  height: 360px;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -80,7 +81,7 @@
 
 .carousel .carousel-panel-container:not(.carousel-hidden) {
   position: relative;
-  height: 300px;
+  height: 360px;
   margin-left: auto;
   margin-right: auto;
   align-content: center;
@@ -88,7 +89,7 @@
 
 .carousel .carousel-panel-container:not(.carousel-hidden) .carousel-panel {
   position: relative;
-  height: 300px;
+  height: 360px;
   align-content: center;
 }
 
