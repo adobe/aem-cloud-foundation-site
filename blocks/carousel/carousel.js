@@ -17,6 +17,24 @@ function decorateVideo(videoLink) {
   }
 }
 
+function rotateCarousel(block) {
+  let panel_containers = block.querySelectorAll('.carousel-panel-container');
+
+  let current = 0;
+  let visible = 0;
+  console.log(panel_containers);
+  panel_containers.forEach((panel_container) => {
+    if (!panel_container.classList.contains("carousel-hidden")) {
+      visible = current;
+    }
+    current = current + 1;
+  });
+
+  panel_containers[visible].classList.add("carousel-hidden");
+  visible = (visible + 1) % panel_containers.length;
+  panel_containers[visible].classList.remove("carousel-hidden");
+}
+
 export default function decorate(block) {
   const panels = [...block.children];
   block.classList.add(`carousel-${panels.length}-panels`);
@@ -27,8 +45,8 @@ export default function decorate(block) {
     if (pic) {
       const picWrapper = pic.closest('div');
       if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in panel
-          picWrapper.classList.add('carousel-img-panel');
+        // picture is only content in panel
+        picWrapper.classList.add('carousel-img-panel');
       }
     }
     const link = panel.querySelector('a');
@@ -45,12 +63,14 @@ export default function decorate(block) {
     });
   });
 
-  let hide_panels=false;
+  let hide_panels = false;
   block.querySelectorAll(':scope > div').forEach((panel_container) => {
     if (hide_panels) panel_container.classList.add('carousel-hidden');
-    hide_panels=true;
+    hide_panels = true;
     panel_container.classList.add('carousel-panel-container');
   });
+
+  setInterval(rotateCarousel, 5000, block);
 
   block.querySelectorAll(':scope > div > div').forEach((panel) => {
     panel.classList.add('carousel-panel');
