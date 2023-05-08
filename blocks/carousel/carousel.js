@@ -22,7 +22,6 @@ function rotateCarousel(block) {
 
   let current = 0;
   let visible = 0;
-  console.log(panel_containers);
   panel_containers.forEach((panel_container) => {
     if (!panel_container.classList.contains("carousel-hidden")) {
       visible = current;
