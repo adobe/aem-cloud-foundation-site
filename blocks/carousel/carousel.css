@@ -11,6 +11,50 @@
   align-items: center;
 }
 
+.carousel :is(img, video) {
+  width: 100%;
+  opacity: 0;
+  position: relative;
+  transition: opacity 2s;
+}
+
+.carousel :is(img, video).enter {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.carousel .carousel-hidden * {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.carousel-panel {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: unset;
+  padding: 0;
+}
+
+.carousel-panel>div {
+  flex: 1;
+  align-items: center;
+  align-content: center;
+  order: unset;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+
+.carousel .carousel-panel-container.carousel-hidden {
+  display: none;
+  position: relative;
+  height: 0;
+  width: 0;
+}
+
+
 .carousel .carousel-panel-container:not(.carousel-hidden) picture {
   height: 300px;
   position: absolute;
@@ -22,7 +66,6 @@
   object-fit: cover;
   box-sizing: border-box;
 }
-
 
 .carousel .carousel-panel-container:not(.carousel-hidden) p {
   margin-left: 20px;
@@ -52,46 +95,4 @@
 .carousel .carousel-panel-container:not(.carousel-hidden) .carousel-panel:not(.carousel-img-panel) {
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.carousel .carousel-hidden * {
-  display: none;
-  height: 0px;
-  width: 0px;
-}
-
-.carousel .carousel-panel-container.carousel-hidden {
-  display: none;
-  position: relative;
-  height: 0px;
-  width: 0px;
-}
-
-.carousel :is(img, video) {
-  width: 100%;
-  opacity: 0;
-  position: relative;
-  transition: opacity 2s;
-}
-
-.carousel :is(img, video).enter {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.carousel-panel {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: unset;
-  padding: 0px 0;
-}
-
-.carousel-panel>div {
-  flex: 1;
-  align-items: center;
-  align-content: center;
-  order: unset;
-  margin-left: 32px;
-  margin-right: 32px;
 }
