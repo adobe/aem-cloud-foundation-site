@@ -289,7 +289,7 @@ header nav .nav-sections ul > li > ul > li:hover {
   }
 
   header nav .nav-sections > ul > li > ul > li {
-    padding: 8px 0;
+    padding: 8px 0 8px 5px;
   }
 
   header nav .nav-sections > ul > li:hover {
