@@ -67,7 +67,7 @@ export default function decorate(block) {
     panelContainer.classList.add('carousel-panel-container');
   });
 
-  setInterval(rotateCarousel, 5000, block);
+  setInterval(rotateCarousel, 10000, block);
 
   block.querySelectorAll(':scope > div > div').forEach((panel) => {
     panel.classList.add('carousel-panel');
