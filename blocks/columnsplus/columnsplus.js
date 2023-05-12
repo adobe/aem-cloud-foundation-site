@@ -49,8 +49,13 @@ function decorateVideo(videoLink) {
 }
 
 export default function decorate(block) {
-  const cols = [...block.firstElementChild.nextElementSibling.children];
-  block.classList.add(`columnsplus-${cols.length}-cols`);
+  let cols = 0;
+
+  [...block.children].forEach((row) => {
+    cols = Math.max(cols, row.children.length);
+  });
+
+  block.classList.add(`columnsplus-${cols}-cols`);
 
   // setup image columns
   [...block.children].forEach((row) => {
