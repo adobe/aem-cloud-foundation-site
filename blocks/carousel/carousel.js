@@ -18,14 +18,7 @@ function decorateVideo(videoLink) {
 function rotateCarousel(block) {
   const panelContainers = block.querySelectorAll('.carousel-panel-container');
 
-  let current = 0;
-  let visible = 0;
-  panelContainers.forEach((panelContainer) => {
-    if (!panelContainer.classList.contains('carousel-hidden')) {
-      visible = current;
-    }
-    current += 1;
-  });
+  let visible = [...panelContainers].findIndex((panelContainer) => !panelContainer.classList.contains('carousel-hidden'));
 
   panelContainers[visible].classList.add('carousel-hidden');
   visible = (visible + 1) % panelContainers.length;
@@ -60,10 +53,8 @@ export default function decorate(block) {
     });
   });
 
-  let hidePanels = false;
-  block.querySelectorAll(':scope > div').forEach((panelContainer) => {
-    if (hidePanels) panelContainer.classList.add('carousel-hidden');
-    hidePanels = true;
+  block.querySelectorAll(':scope > div').forEach((panelContainer, index) => {
+    if (index > 0) panelContainer.classList.add('carousel-hidden');
     panelContainer.classList.add('carousel-panel-container');
   });
 

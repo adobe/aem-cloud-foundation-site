@@ -14,14 +14,7 @@
 
 .carousel :is(img, video) {
   width: 100%;
-  opacity: 0;
   position: relative;
-  transition: opacity 2s;
-}
-
-.carousel :is(img, video).enter {
-  opacity: 1;
-  transform: translate(0, 0);
 }
 
 .carousel-panel {
