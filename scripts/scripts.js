@@ -21,8 +21,8 @@ window.hlx.RUM_GENERATION = 'aem-cloud-foundation-site-1'; // add your RUM gener
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  const h1 = main.querySelector('h1');
-  const picture = main.querySelector('picture');
+  const h1 = main.querySelector(':scope > div > h1');
+  const picture = main.querySelector(':scope > div > p > picture');
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
