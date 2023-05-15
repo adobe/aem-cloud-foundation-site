@@ -32,12 +32,26 @@ function buildHeroBlock(main) {
 }
 
 /**
+ * Builds video hero block and prepends to main in a new section.
+ * @param {Element} main The container element
+ */
+function buildVideoHeroBlock(main) {
+  const titleLink = main.querySelector(':scope > div > h1 > a');
+  if (titleLink && titleLink.href.endsWith('.mp4')) {
+    const section = document.createElement('div');
+    section.append(buildBlock('video-hero', { elems: [titleLink.parentElement] }));
+    main.prepend(section);
+  }
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildVideoHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
