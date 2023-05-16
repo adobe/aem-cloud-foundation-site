@@ -1,0 +1,33 @@
+div.fixedbackground {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: white;
+}
+
+div.fixedbackground h1 {
+  display: inline;
+  line-height: 30px;
+}
+
+div.fixedbackground h1:nth-child(2) {
+  font-weight: lighter;
+}
+
+div.fixedbackground-content {
+  padding: 50px 10% 50px 50%;
+  min-height: 300px;
+}
+
+div.fixedbackground p::before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 74px;
+  background-color: white;
+  position: relative;
+  left: 0;
+  bottom: 10px;
+}
+
