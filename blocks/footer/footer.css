@@ -17,3 +17,26 @@ footer .footer div {
   margin: 0;
   font-size: var(--body-font-size-xs);
 }
+
+@media (max-width: 900px) {
+  footer .columns > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 900px) {
+  footer .columns > div {
+    display: flex;
+    align-items: center;
+    flex-direction: unset;
+    padding: 20px 0;
+  }
+
+  footer .columns > div>div {
+    flex: 1;
+    order: unset;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
