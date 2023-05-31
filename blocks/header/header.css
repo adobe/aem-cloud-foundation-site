@@ -261,19 +261,26 @@ header nav .nav-sections ul > li > ul > li:hover {
   }
 
   header nav .nav-sections > ul > li > ul {
-    display: none;
+    display: block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
     position: relative;
+    opacity: 0;
+    transition-timing-function: linear, step-end;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
-    display: block;
     position: absolute;
+    height: auto;
     left: -1em;
-    width: 200px;
+    width: 150px;
     margin-top: 12px;
     padding: 1em;
     background-color: var(--highlight-background-color);
     white-space: initial;
+    opacity: 1;
+    transition: opacity 0.2s linear, height 0.2s step-start;
   }
 
   header nav .nav-sections > ul > li > ul::before {
