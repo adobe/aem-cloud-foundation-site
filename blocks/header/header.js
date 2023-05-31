@@ -43,6 +43,10 @@ function focusNavSection() {
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
+    const menu = section.querySelector('ul');
+    if (menu) {
+      menu.classList.add('hidden');
+    }
   });
 }
 
@@ -96,6 +100,20 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+function menuFadeIn(section, expand) {
+  const menu = section.querySelector('ul');
+  section.setAttribute('aria-expanded', expand);
+  if (expand) {
+    // Switching from 'display node' to 'display: block' breaks the transition animations.
+    // Waiting some time before removing the 'hidden' class allows the fade-in animation to run.
+    setTimeout(() => {
+      menu.classList.remove('hidden');
+    }, 20);
+  } else {
+    menu.classList.add('hidden');
+  }
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -129,7 +147,7 @@ export default async function decorate(block) {
           if (isDesktop.matches) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            menuFadeIn(navSection, !expanded);
           }
         });
       });
