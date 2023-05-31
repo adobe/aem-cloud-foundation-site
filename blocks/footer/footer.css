@@ -12,3 +12,8 @@ footer .footer p {
   margin: 0;
   font-size: var(--body-font-size-xs);
 }
+
+footer .footer div {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+}
