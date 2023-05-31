@@ -263,6 +263,11 @@ header nav .nav-sections ul > li > ul > li:hover {
   header nav .nav-sections > ul > li > ul {
     display: none;
     position: relative;
+    transition: opacity 0.2s linear;
+  }
+
+  header nav .nav-sections > ul > li > ul.hidden {
+    opacity: 0;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
