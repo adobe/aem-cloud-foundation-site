@@ -51,6 +51,7 @@
 .carousel .carousel-panel-container.carousel-hidden {
   opacity: 0;
   transition: opacity 1s;
+  z-index: -1;
 }
 
 .carousel .carousel-panel-container picture {
