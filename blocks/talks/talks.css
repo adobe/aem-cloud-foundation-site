@@ -1,0 +1,62 @@
+
+.talk {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.talk a {
+    text-decoration: none;
+    color: #333;
+}
+
+.talk h4 {
+    margin: 0;
+}
+
+.talk p {
+    margin: 0;
+}
+
+.talk p.date {
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+.talk p.blurb {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.speaker {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.speaker img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.speaker p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.speaker p.name {
+    min-width: 150px;
+}
+
+.speaker p.bio {
+    padding-left: 10px;
+}
+
+.talk:hover {
+    background-color: #f7f7f7;
+}
