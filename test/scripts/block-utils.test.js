@@ -47,28 +47,6 @@ describe('Utils methods', () => {
     expect(error).to.equal('error');
   });
 
-  it('Collects RUM data', async () => {
-    const sendBeacon = sinon.stub(navigator, 'sendBeacon');
-    // turn on RUM
-    window.history.pushState({}, '', `${window.location.href}&rum=on`);
-    delete window.hlx;
-
-    // sends checkpoint beacon
-    await blockUtils.sampleRUM('test', { foo: 'bar' });
-    expect(sendBeacon.called).to.be.true;
-    sendBeacon.resetHistory();
-
-    // sends cwv beacon
-    await blockUtils.sampleRUM('cwv', { foo: 'bar' });
-    expect(sendBeacon.called).to.be.true;
-
-    // test error handling
-    sendBeacon.throws();
-    await blockUtils.sampleRUM('error', { foo: 'bar' });
-
-    sendBeacon.restore();
-  });
-
   it('Creates optimized picture', async () => {
     const $picture = blockUtils.createOptimizedPicture('/test/scripts/mock.png');
     expect($picture.querySelector(':scope source[type="image/webp"]')).to.exist; // webp
